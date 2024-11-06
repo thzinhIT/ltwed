@@ -65,6 +65,9 @@ nav ul li a {
 .auth {
   font-size: 1rem;
 }
+.cart a {
+  color: white;
+}
 
 .auth a {
   color: #fff;

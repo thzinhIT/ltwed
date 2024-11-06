@@ -72,9 +72,17 @@ document.querySelectorAll(".add-to-cart").forEach(function (button) {
   button.addEventListener("click", function () {
     let productCard = button.closest(".product-card");
     let productName = productCard.querySelector("h3").textContent;
-    let productPrice = productCard
-      .querySelector("p")
-      .textContent.match(/\d+/g)[0];
+
+    let productPriceText = productCard.querySelector("p").textContent; // Ví dụ: "Giá: 2,590,000 VNĐ"
+
+    // Loại bỏ phần "Giá: " và "VNĐ", đồng thời loại bỏ dấu phẩy
+    let productPrice = productPriceText
+      .replace("Giá: ", "") // Loại bỏ "Giá: "
+      .replace(" VNĐ", "") // Loại bỏ " VNĐ"
+      .replace(/,/g, ""); // Loại bỏ dấu phẩy
+
+    // Chuyển đổi chuỗi thành số
+    productPrice = parseInt(productPrice);
     let productImage = productCard.querySelector("img").getAttribute("src");
 
     // Kiểm tra xem sản phẩm đã có trong giỏ chưa
@@ -124,8 +132,7 @@ function updateCart() {
   });
 
   // Cập nhật tổng số tiền
-  document.getElementById("total-amount").textContent =
-    totalAmount + ".000.000 VNĐ";
+  document.getElementById("total-amount").textContent = totalAmount + " VNĐ";
 }
 
 // Mở modal giỏ hàng
