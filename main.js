@@ -102,7 +102,13 @@ document.querySelectorAll(".add-to-cart").forEach(function (button) {
     updateCart();
   });
 });
+function removeItemFromCart(itemId) {
+  // Lọc ra các sản phẩm không phải là sản phẩm có id cần xóa
+  cartItems = cartItems.filter((item) => item.id !== itemId);
 
+  // Cập nhật lại giỏ hàng sau khi xóa
+  updateCart();
+}
 // Cập nhật giỏ hàng trong modal
 function updateCart() {
   let cartTableBody = document.getElementById("cart-items");
@@ -126,6 +132,7 @@ function updateCart() {
                 <td>${item.quantity}</td>
                 <td>${item.price} VNĐ</td>
                 <td>${totalItemPrice} VNĐ</td>
+                <td><i class="fas fa-trash-alt" style="cursor: pointer; color: red;" onclick="removeItemFromCart(${item.id})"></i></td> 
             </tr>
         `;
     cartTableBody.innerHTML += row;

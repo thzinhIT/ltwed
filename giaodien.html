@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Trang bán điện thoại</title>
   </head>
   <body>
@@ -15,7 +22,6 @@
           <li><a href="#" id="phones-link">Đồ chơi trẻ em</a></li>
           <li><a href="#" id="accessories-link">Sản phẩm khuyến mãi</a></li>
           <li><a href="#" id="support-link">Hỗ trợ</a></li>
-          <li><a href="#" id="my-orders-link">Đơn hàng của tôi</a></li>
         </ul>
       </nav>
       <div class="search-bar">
@@ -496,49 +502,49 @@
       </div>
     </section>
     <!-- about me -->
-    <section class="about_me">
-      <div class="about_me">
-        <div class="main-content">
-          <div class="body">
-            <div class="title">
-              <h2>Tại sao chọn chúng tôi</h2>
-            </div>
+    <!-- <section class="about_me"> -->
+    <div class="about_me">
+      <div class="main-content">
+        <div class="body">
+          <div class="title">
+            <h2>Tại sao chọn chúng tôi</h2>
+          </div>
 
-            <div class="list_item">
-              <!-- item 1 -->
-              <div class="item">
-                <img src="./img/cam-ket-chat-luong-1.png" alt="" />
-                <h3 class="subtitle">Cam kết chất lượng</h3>
-                <p>
-                  Baby của tôi cung cấp sản phẩm có nguyên liệu nhựa an toàn,
-                  không độc tố và các linh kiện điện tử chất lượng cao nhất
-                </p>
-              </div>
-              <!-- item 1 -->
-              <div class="item">
-                <img src="./img/he-thong-cua-hang-1.png" alt="" />
-                <h3 class="subtitle">Hệ thống cửa hàng</h3>
-                <p>
-                  Hệ thống cửa hàng baby của tôi cung cấp đồ chơi và các sản
-                  phẩm giá rẻ chất lượng cao được sản xuất theo Tiêu chuẩn Châu
-                  Âu, có đầy đủ chứng nhận và kiểm định.
-                </p>
-              </div>
-              <!-- item 1 -->
-              <div class="item">
-                <img src="./img/support-icon.png" alt="" />
-                <h3 class="subtitle">Quy trình trọn gói</h3>
-                <p>
-                  Quy trình trọn gói từ giới thiệu tư vấn sản phẩm, hướng dẫn sử
-                  dụng lắp ráp, tới bán hàng vận chuyển và hỗ trợ sau mua hàng,
-                  bảo hành bảo trì sửa chữa theo tiêu chuẩn chất lượng cao.
-                </p>
-              </div>
+          <div class="list_item">
+            <!-- item 1 -->
+            <div class="item">
+              <img src="./img/cam-ket-chat-luong-1.png" alt="" />
+              <h3 class="subtitle">Cam kết chất lượng</h3>
+              <p>
+                Baby của tôi cung cấp sản phẩm có nguyên liệu nhựa an toàn,
+                không độc tố và các linh kiện điện tử chất lượng cao nhất
+              </p>
+            </div>
+            <!-- item 1 -->
+            <div class="item">
+              <img src="./img/he-thong-cua-hang-1.png" alt="" />
+              <h3 class="subtitle">Hệ thống cửa hàng</h3>
+              <p>
+                Hệ thống cửa hàng baby của tôi cung cấp đồ chơi và các sản phẩm
+                giá rẻ chất lượng cao được sản xuất theo Tiêu chuẩn Châu Âu, có
+                đầy đủ chứng nhận và kiểm định.
+              </p>
+            </div>
+            <!-- item 1 -->
+            <div class="item">
+              <img src="./img/support-icon.png" alt="" />
+              <h3 class="subtitle">Quy trình trọn gói</h3>
+              <p>
+                Quy trình trọn gói từ giới thiệu tư vấn sản phẩm, hướng dẫn sử
+                dụng lắp ráp, tới bán hàng vận chuyển và hỗ trợ sau mua hàng,
+                bảo hành bảo trì sửa chữa theo tiêu chuẩn chất lượng cao.
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+    <!-- </section> -->
     <!-- Modal Chi tiết sản phẩm -->
     <!-- <div id="product-detail-modal" class="modal">
       <div class="product-detail-modal-content">
@@ -646,6 +652,7 @@
               <th>Số lượng</th>
               <th>Giá</th>
               <th>Tổng</th>
+              <th>Xóa</th>
             </tr>
           </thead>
           <tbody id="cart-items">
