@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Trang bán điện thoại</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">TV6 STORE</div>
+      <nav>
+        <ul>
+          <li><a href="#" id="phones-link">Đồ chơi trẻ em</a></li>
+          <li><a href="#" id="accessories-link">Sản phẩm khuyến mãi</a></li>
+          <li><a href="#" id="support-link">Hỗ trợ</a></li>
+          <li><a href="#" id="my-orders-link">Đơn hàng của tôi</a></li>
+        </ul>
+      </nav>
+      <div class="search-bar">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Tìm kiếm sản phẩm..."
+        />
+        <button id="search-button">Tìm kiếm</button>
+      </div>
+      <div id="no-results" class="no-results">Không tìm thấy sản phẩm nào.</div>
+
+      <div class="cart">
+        <a href="#">Giỏ hàng </a>
+      </div>
+      <div class="auth">
+        <a href="#" id="login-link">Đăng nhập</a> |
+        <a href="#" id="signup-link">Đăng ký</a>
+        <!-- Avatar ẩn khi chưa đăng nhập -->
+        <div id="user-avatar" style="display: none">
+          <img src="" alt="Avatar" id="avatar-img" />
+          <a href="#" id="logout-link">Đăng xuất</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero-slideshow">
+      <div class="slideshow-container">
+        <!-- Slide 1 -->
+        <div class="slide fade">
+          <img src="./img/kdcl-1.jpg" alt="Khuyến mãi 1" />
+          <a href="#" class="slide-link">Tham gia sự kiện</a>
+        </div>
+        <div class="slide fade">
+          <img
+            src="./img/ban-giao-xe-oto-dien-tre-em-1.jpg"
+            alt="Khuyến mãi 2"
+          />
+          <a href="#" class="slide-link">Tham gia sự kiện</a>
+        </div>
+        <div class="slide fade">
+          <img src="./img/xe-oto-dien-tre-em.jpg" alt="Khuyến mãi 3" />
+          <a href="#" class="slide-link">Tham gia sự kiện</a>
+        </div>
+        <div class="slide fade">
+          <img src="/img/s23.jpg" alt="Khuyến mãi 4" />
+          <a href="#" class="slide-link">Tham gia sự kiện</a>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+    </section>
+
+    <section id="phones-section" class="visible-section">
+      <h2>Sản phẩm nổi bật</h2>
+      <div class="filters">
+        <select id="brandFilter">
+          <option value="all">Tất cả các hãng</option>
+          <option value="samsung">XE TRẺ EM</option>
+          <option value="apple">BÚP BÊ</option>
+          <option value="xiaomi">SIÊU NHÂN</option>
+        </select>
+
+        <select id="priceFilter">
+          <option value="all">Tất cả khoảng giá</option>
+          <option value="0-500000">Dưới 5 Trăm</option>
+          <option value="500000-1000000">5 Trăm - 1 triệu</option>
+          <option value="1000000-2000000">1 triệu - 2 triệu</option>
+          <option value="2000000">Trên 2 triệu</option>
+        </select>
+      </div>
+
+      <div class="product-grid">
+        <div class="product-card" data-price="290000" data-brand="apple">
+          <img src="./img/bupbe1.gif" alt="Điện thoại 1" />
+          <h3>Thay đồ cho búp bê GH-NC32</h3>
+          <p>Giá: 290,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="product-card" data-price="250000" data-brand="apple">
+          <img
+            src="./img/Vi-dan-mong-tay-ngua-pony-DM-25D-230x230.gif"
+            alt="Thiết bị 1"
+          />
+          <h3>Vỉ dán móng tay ngựa Pony DM-25D</h3>
+          <p>Giá: 250,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="product-card" data-price="2590000" data-brand="apple">
+          <img
+            src="./img/Bup-be-giay-Biet-thu-nhung-chang-trai-BBG024-230x230.gif"
+            alt="Điện thoại 3"
+          />
+          <h3>Búp bê giấy – Biệt thự những chàng trai BBG024</h3>
+          <p>Giá: 2,590,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="product-card" data-price="7900000" data-brand="samsung">
+          <img
+            src="./img/bbt-666-66-o-to-dien-tre-em-cho-be-dang-bmw-medium.jpg"
+            alt="Điện thoại 4"
+          />
+          <h3>Ô tô điện trẻ em dáng siêu xe BMW BBT-666.66</h3>
+          <p>Giá: 7,900,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="product-card" data-price="7900000" data-brand="samsung">
+          <img
+            src="./img/us911f-xe-may-dien-tre-em-xe-canh-sat-cho-be-4-medium.jpg"
+            alt="Điện thoại 4"
+          />
+          <h3>Ô tô điện cảnh sát cho bé siêu xe Ferrari US911F</h3>
+          <p>Giá: 7,900,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="product-card" data-price="7900000" data-brand="samsung">
+          <img src="./img/bbt-4000.jpg" alt="Điện thoại 4" />
+          <h3>Xe máy điện trẻ em siêu xe thể thao Agusta F4 RC</h3>
+          <p>Giá: 7,900,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="product-card" data-price="250000" data-brand="xiaomi">
+          <img
+            src="./img/Long-den-sieu-nhan-2-manh-LD2M3-230x230.jpg"
+            alt="Điện thoại 4"
+          />
+          <h3>Lồng đèn robot 2 mảnh pin LD2M5</h3>
+          <p>Giá: 250,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="product-card" data-price="350000" data-brand="xiaomi">
+          <img
+            src="./img/Long-den-sieu-nhan-anh-hoa-LD5D6-500x480.jpg"
+            alt="Điện thoại 4"
+          />
+          <h3>Lồng đèn siêu nhân ánh hoa pin LD5D5</h3>
+          <p>Giá: 350,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+
+        <!-- phần ẩn để xem thêm .... -->
+
+        <div
+          class="product-card hidden"
+          data-price="7900000"
+          data-brand="samsung"
+        >
+          <img
+            src="./img/us911f-xe-may-dien-tre-em-xe-canh-sat-cho-be-4-medium.jpg"
+            alt="Điện thoại 4"
+          />
+          <h3>Ô tô điện cảnh sát cho bé siêu xe Ferrari US911F</h3>
+          <p>Giá: 7,900,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+
+        <div
+          class="product-card hidden"
+          data-price="7900000"
+          data-brand="samsung"
+        >
+          <img
+            src="./img/us911f-xe-may-dien-tre-em-xe-canh-sat-cho-be-4-medium.jpg"
+            alt="Điện thoại 4"
+          />
+          <h3>Ô tô điện cảnh sát cho bé siêu xe Ferrari US911F</h3>
+          <p>Giá: 7,900,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+
+        <div
+          class="product-card hidden"
+          data-price="7900000"
+          data-brand="samsung"
+        >
+          <img
+            src="./img/us911f-xe-may-dien-tre-em-xe-canh-sat-cho-be-4-medium.jpg"
+            alt="Điện thoại 4"
+          />
+          <h3>Ô tô điện cảnh sát cho bé siêu xe Ferrari US911F</h3>
+          <p>Giá: 7,900,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+
+        <div
+          class="product-card hidden"
+          data-price="7900000"
+          data-brand="samsung"
+        >
+          <img
+            src="./img/us911f-xe-may-dien-tre-em-xe-canh-sat-cho-be-4-medium.jpg"
+            alt="Điện thoại 4"
+          />
+          <h3>Ô tô điện cảnh sát cho bé siêu xe Ferrari US911F</h3>
+          <p>Giá: 7,900,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+
+        <div
+          class="product-card hidden"
+          data-price="7900000"
+          data-brand="samsung"
+        >
+          <img
+            src="./img/us911f-xe-may-dien-tre-em-xe-canh-sat-cho-be-4-medium.jpg"
+            alt="Điện thoại 4"
+          />
+          <h3>Ô tô điện cảnh sát cho bé siêu xe Ferrari US911F</h3>
+          <p>Giá: 7,900,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+
+        <div
+          class="product-card hidden"
+          data-price="7900000"
+          data-brand="samsung"
+        >
+          <img
+            src="./img/us911f-xe-may-dien-tre-em-xe-canh-sat-cho-be-4-medium.jpg"
+            alt="Điện thoại 4"
+          />
+          <h3>Ô tô điện cảnh sát cho bé siêu xe Ferrari US911F</h3>
+          <p>Giá: 7,900,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+
+        <div
+          class="product-card hidden"
+          data-price="7900000"
+          data-brand="samsung"
+        >
+          <img
+            src="./img/us911f-xe-may-dien-tre-em-xe-canh-sat-cho-be-4-medium.jpg"
+            alt="Điện thoại 4"
+          />
+          <h3>Ô tô điện cảnh sát cho bé siêu xe Ferrari US911F</h3>
+          <p>Giá: 7,900,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+
+        <div
+          class="product-card hidden"
+          data-price="7900000"
+          data-brand="samsung"
+        >
+          <img
+            src="./img/us911f-xe-may-dien-tre-em-xe-canh-sat-cho-be-4-medium.jpg"
+            alt="Điện thoại 4"
+          />
+          <h3>Ô tô điện cảnh sát cho bé siêu xe Ferrari US911F</h3>
+          <p>Giá: 7,900,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+      </div>
+      <div class="show-more">
+        <button onclick="toggleProducts()" id="toggleButton">Xem thêm</button>
+      </div>
+    </section>
+
+    <!-- sản phẩm khuyến mãi Section -->
+    <section id="accessories-section" class="hidden-section">
+      <h2>Sản phẩm khuyến mãi</h2>
+      <div class="product-grid">
+        <div class="product-card km">
+          <img
+            src="./img/Combo-4-cuon-sticker-thay-trang-phuc-bup-be-xinh-dep-HDCB4B-230x230.png"
+            alt="Điện thoại 1"
+          />
+          <span class="onsale">-20%</span>
+          <h3>Combo 4 cuốn sticker búp bê xinh đẹp</h3>
+          <p style="text-decoration: line-through">Giá: 120,000 VNĐ</p>
+          <p style="color: red">Còn:90,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="product-card km">
+          <img
+            src="./img/Topmodel-Tranh-dan-nhu-fantaysy-model-500x480.gif"
+            alt="Điện thoại 1"
+          />
+          <span class="onsale">-20%</span>
+          <h3>Topmodel – Tranh dán nhũ Fantasy</h3>
+          <p style="text-decoration: line-through">Giá: 120,000 VNĐ</p>
+          <p style="color: red">Còn:90,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="product-card km">
+          <img
+            src="./img/Combo-4-cuon-sticker-dan-trang-diem-guong-mat-bup-be-cong-chua-HDCB4-500x480.png"
+            alt="Điện thoại 1"
+          />
+          <span class="onsale">-20%</span>
+          <h3>Combo 4 cuốn dán trang điểm gương</h3>
+          <p style="text-decoration: line-through">Giá: 120,000 VNĐ</p>
+          <p style="color: red">Còn:90,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="product-card km">
+          <img
+            src="./img/bbt-4000-xe-may-dien-tre-em-phan-khoi-lon-cho-be-2.jpg"
+            alt="Điện thoại 1"
+          />
+          <span class="onsale">-20%</span>
+          <h3>Xe máy điện trẻ emsiêu xe thể thao Agusta F4</h3>
+          <p style="text-decoration: line-through">Giá: 120,000 VNĐ</p>
+          <p style="color: red">Còn:90,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="product-card km">
+          <img
+            src="./img/Combo-4-cuon-sticker-thay-trang-phuc-bup-be-xinh-dep-HDCB4B-230x230.png"
+            alt="Điện thoại 1"
+          />
+          <span class="onsale">-20%</span>
+          <h3>Combo 4 cuốn sticker búp bê xinh đẹp</h3>
+          <p style="text-decoration: line-through">Giá: 120,000 VNĐ</p>
+          <p style="color: red">Còn:90,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="product-card km">
+          <img
+            src="./img/Combo-4-cuon-sticker-thay-trang-phuc-bup-be-xinh-dep-HDCB4B-230x230.png"
+            alt="Điện thoại 1"
+          />
+          <span class="onsale">-20%</span>
+          <h3>Combo 4 cuốn sticker búp bê xinh đẹp</h3>
+          <p style="text-decoration: line-through">Giá: 120,000 VNĐ</p>
+          <p style="color: red">Còn:90,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="product-card km">
+          <img
+            src="./img/Combo-4-cuon-sticker-thay-trang-phuc-bup-be-xinh-dep-HDCB4B-230x230.png"
+            alt="Điện thoại 1"
+          />
+          <span class="onsale">-20%</span>
+          <h3>Combo 4 cuốn sticker búp bê xinh đẹp</h3>
+          <p style="text-decoration: line-through">Giá: 120,000 VNĐ</p>
+          <p style="color: red">Còn:90,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="product-card km">
+          <img
+            src="./img/Combo-4-cuon-sticker-thay-trang-phuc-bup-be-xinh-dep-HDCB4B-230x230.png"
+            alt="Điện thoại 1"
+          />
+          <span class="onsale">-20%</span>
+          <h3>Combo 4 cuốn sticker búp bê xinh đẹp</h3>
+          <p style="text-decoration: line-through">Giá: 120,000 VNĐ</p>
+          <p style="color: red">Còn:90,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+
+        <!-- phần hiển thị thêm  -->
+        <div class="product-card km hidden">
+          <img
+            src="./img/Combo-4-cuon-sticker-thay-trang-phuc-bup-be-xinh-dep-HDCB4B-230x230.png"
+            alt="Điện thoại 1"
+          />
+          <span class="onsale">-20%</span>
+          <h3>Combo 4 cuốn sticker búp bê xinh đẹp</h3>
+          <p style="text-decoration: line-through">Giá: 120,000 VNĐ</p>
+          <p style="color: red">Còn:90,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="product-card km hidden">
+          <img
+            src="./img/Combo-4-cuon-sticker-thay-trang-phuc-bup-be-xinh-dep-HDCB4B-230x230.png"
+            alt="Điện thoại 1"
+          />
+          <span class="onsale">-20%</span>
+          <h3>Combo 4 cuốn sticker búp bê xinh đẹp</h3>
+          <p style="text-decoration: line-through">Giá: 120,000 VNĐ</p>
+          <p style="color: red">Còn:90,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="product-card km hidden">
+          <img
+            src="./img/Combo-4-cuon-sticker-thay-trang-phuc-bup-be-xinh-dep-HDCB4B-230x230.png"
+            alt="Điện thoại 1"
+          />
+          <span class="onsale">-20%</span>
+          <h3>Combo 4 cuốn sticker búp bê xinh đẹp</h3>
+          <p style="text-decoration: line-through">Giá: 120,000 VNĐ</p>
+          <p style="color: red">Còn:90,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="product-card km hidden">
+          <img
+            src="./img/Combo-4-cuon-sticker-thay-trang-phuc-bup-be-xinh-dep-HDCB4B-230x230.png"
+            alt="Điện thoại 1"
+          />
+          <span class="onsale">-20%</span>
+          <h3>Combo 4 cuốn sticker búp bê xinh đẹp</h3>
+          <p style="text-decoration: line-through">Giá: 120,000 VNĐ</p>
+          <p style="color: red">Còn:90,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="product-card km hidden">
+          <img
+            src="./img/Combo-4-cuon-sticker-thay-trang-phuc-bup-be-xinh-dep-HDCB4B-230x230.png"
+            alt="Điện thoại 1"
+          />
+          <span class="onsale">-20%</span>
+          <h3>Combo 4 cuốn sticker búp bê xinh đẹp</h3>
+          <p style="text-decoration: line-through">Giá: 120,000 VNĐ</p>
+          <p style="color: red">Còn:90,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="product-card km hidden">
+          <img
+            src="./img/Combo-4-cuon-sticker-thay-trang-phuc-bup-be-xinh-dep-HDCB4B-230x230.png"
+            alt="Điện thoại 1"
+          />
+          <span class="onsale">-20%</span>
+          <h3>Combo 4 cuốn sticker búp bê xinh đẹp</h3>
+          <p style="text-decoration: line-through">Giá: 120,000 VNĐ</p>
+          <p style="color: red">Còn:90,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="product-card km hidden">
+          <img
+            src="./img/Combo-4-cuon-sticker-thay-trang-phuc-bup-be-xinh-dep-HDCB4B-230x230.png"
+            alt="Điện thoại 1"
+          />
+          <span class="onsale">-20%</span>
+          <h3>Combo 4 cuốn sticker búp bê xinh đẹp</h3>
+          <p style="text-decoration: line-through">Giá: 120,000 VNĐ</p>
+          <p style="color: red">Còn:90,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="product-card km hidden">
+          <img
+            src="./img/Combo-4-cuon-sticker-thay-trang-phuc-bup-be-xinh-dep-HDCB4B-230x230.png"
+            alt="Điện thoại 1"
+          />
+          <span class="onsale">-20%</span>
+          <h3>Combo 4 cuốn sticker búp bê xinh đẹp</h3>
+          <p style="text-decoration: line-through">Giá: 120,000 VNĐ</p>
+          <p style="color: red">Còn:90,000 VNĐ</p>
+          <button class="add-to-cart">Thêm vào giỏ</button>
+          <a href="#">Mua ngay</a>
+        </div>
+
+        <div class="show-more">
+          <button onclick="toggleProducts()" id="toggleButton">Xem thêm</button>
+        </div>
+      </div>
+    </section>
+    <!-- about me -->
+    <section class="about_me">
+      <div class="about_me">
+        <div class="main-content">
+          <div class="body">
+            <div class="title">
+              <h2>Tại sao chọn chúng tôi</h2>
+            </div>
+
+            <div class="list_item">
+              <!-- item 1 -->
+              <div class="item">
+                <img src="./img/cam-ket-chat-luong-1.png" alt="" />
+                <h3 class="subtitle">Cam kết chất lượng</h3>
+                <p>
+                  Baby của tôi cung cấp sản phẩm có nguyên liệu nhựa an toàn,
+                  không độc tố và các linh kiện điện tử chất lượng cao nhất
+                </p>
+              </div>
+              <!-- item 1 -->
+              <div class="item">
+                <img src="./img/he-thong-cua-hang-1.png" alt="" />
+                <h3 class="subtitle">Hệ thống cửa hàng</h3>
+                <p>
+                  Hệ thống cửa hàng baby của tôi cung cấp đồ chơi và các sản
+                  phẩm giá rẻ chất lượng cao được sản xuất theo Tiêu chuẩn Châu
+                  Âu, có đầy đủ chứng nhận và kiểm định.
+                </p>
+              </div>
+              <!-- item 1 -->
+              <div class="item">
+                <img src="./img/support-icon.png" alt="" />
+                <h3 class="subtitle">Quy trình trọn gói</h3>
+                <p>
+                  Quy trình trọn gói từ giới thiệu tư vấn sản phẩm, hướng dẫn sử
+                  dụng lắp ráp, tới bán hàng vận chuyển và hỗ trợ sau mua hàng,
+                  bảo hành bảo trì sửa chữa theo tiêu chuẩn chất lượng cao.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Modal Chi tiết sản phẩm -->
+    <!-- <div id="product-detail-modal" class="modal">
+      <div class="product-detail-modal-content">
+        <span class="product-detail-close" id="close-product-detail"
+          >&times;</span
+        >
+        <div class="product-detail-container">
+          <div class="product-detail-images">
+            <img id="product-detail-main-image" src="" alt="ảnh chính" />
+            <div class="product-detail-thumbnails">
+              <img
+                class="product-detail-thumbnail"
+                src="phone1.jpg"
+                alt="Ảnh phụ 1"
+              />
+              <img
+                class="product-detail-thumbnail"
+                src="phone2.jpg"
+                alt="Ảnh phụ 2"
+              />
+              <img
+                class="product-detail-thumbnail"
+                src="phone3.jpg"
+                alt="Ảnh phụ 3"
+              />
+            </div>
+          </div>
+          <div class="product-detail-info">
+            <h3 id="product-detail-name">Tên sản phẩm</h3>
+            <p id="product-detail-price">Giá: 0 VNĐ</p>
+            <p id="product-detail-description">Mô tả chi tiết về sản phẩm...</p>
+            <div class="product-detail-rating">
+              <strong>Đánh giá:</strong>
+              <span id="product-detail-rating">4.5/5</span>
+            </div>
+            <button class="product-detail-add-to-cart">Thêm vào giỏ</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div id="product-detail-modal" class="modal" style="display: none">
+      <div class="product-detail-modal-content">
+        <span class="product-detail-close" id="close-product-detail"
+          >&times;</span
+        >
+        <div class="product-detail-container">
+          <div class="product-detail-images">
+            <img id="product-detail-main-image" src="" alt="Ảnh chính" />
+          </div>
+          <div class="product-detail-info">
+            <h3 id="product-detail-name">Tên sản phẩm</h3>
+            <p id="product-detail-price">Giá: 0 VNĐ</p>
+            <p id="product-detail-description">Mô tả chi tiết về sản phẩm...</p>
+            <div class="product-detail-rating">
+              <strong>Đánh giá:</strong>
+              <span id="product-detail-rating">4.5/5</span>
+            </div>
+            <button class="product-detail-add-to-cart">Thêm vào giỏ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--hỗ trợ-->
+    <section id="support-section">
+      <div class="support-container">
+        <h2>Hỗ trợ khách hàng</h2>
+        <p class="support-text">
+          Chúng tôi luôn sẵn sàng hỗ trợ bạn mọi lúc, mọi nơi. Chọn phương thức
+          liên hệ phù hợp nhất với bạn:
+        </p>
+        <div class="support-options">
+          <div class="support-card">
+            <i class="fas fa-phone-alt"></i>
+            <h3>Hotline</h3>
+            <p>Gọi ngay: <a href="tel:18000000">1800-0000</a></p>
+          </div>
+          <div class="support-card">
+            <i class="fas fa-comments"></i>
+            <h3>Chat trực tuyến</h3>
+            <p>
+              <a href="https://zalo.me/0862750297">Nhắn tin với chúng tôi</a>
+            </p>
+          </div>
+          <div class="support-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email hỗ trợ</h3>
+            <p>
+              <a href="mailto:support@example.com">pdthk2004@example.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Giỏ hàng Modal -->
+    <div id="cart-modal" class="modal" style="display: none">
+      <div class="modal-content">
+        <span class="close" id="close-cart-modal">&times;</span>
+        <h2>Giỏ hàng của bạn</h2>
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Sản phẩm</th>
+              <th>Số lượng</th>
+              <th>Giá</th>
+              <th>Tổng</th>
+            </tr>
+          </thead>
+          <tbody id="cart-items">
+            <!-- Sp được thêm vào -->
+          </tbody>
+        </table>
+        <div class="cart-total">
+          <strong>Tổng tiền:</strong> <span id="total-amount">0 VNĐ</span>
+        </div>
+        <button id="checkout-btn" class="checkout-button">Thanh toán</button>
+      </div>
+    </div>
+
+    <!-- Modal Đăng nhập -->
+    <div id="login-modal" class="modal" style="display: none">
+      <div class="modal-content">
+        <h2>Đăng nhập</h2>
+        <form id="login-form">
+          <label for="login-email">Email:</label>
+          <input type="email" id="login-email" name="email" required />
+          <label for="login-password">Mật khẩu:</label>
+          <input type="password" id="login-password" name="password" required />
+          <button type="submit" class="main-btn">Đăng nhập</button>
+        </form>
+        <div class="social-login">
+          <button class="social-btn fb-btn">Đăng nhập bằng Facebook</button>
+          <button class="social-btn gg-btn">Đăng nhập bằng Google</button>
+        </div>
+        <p>Chưa có tài khoản? <a href="#" id="open-signup">Đăng ký</a></p>
+      </div>
+    </div>
+
+    <!-- Modal Đăng ký -->
+    <div id="signup-modal" class="modal" style="display: none">
+      <div class="modal-content">
+        <h2>Đăng ký</h2>
+        <form id="signup-form">
+          <label for="signup-name">Họ tên:</label>
+          <input type="text" id="signup-name" name="name" required />
+          <label for="signup-email">Email:</label>
+          <input type="email" id="signup-email" name="email" required />
+          <label for="signup-password">Mật khẩu:</label>
+          <input
+            type="password"
+            id="signup-password"
+            name="password"
+            required
+          />
+          <button type="submit" class="main-btn">Đăng ký</button>
+        </form>
+        <div class="social-login">
+          <button class="social-btn fb-btn">Đăng ký bằng Facebook</button>
+          <button class="social-btn gg-btn">Đăng ký bằng Google</button>
+        </div>
+        <p>Đã có tài khoản? <a href="#" id="open-login">Đăng nhập</a></p>
+      </div>
+    </div>
+
+    <!-- Modal Thanh toán -->
+    <div id="checkout-modal" class="modal" style="display: none">
+      <div class="modal-content">
+        <h2>Thanh toán</h2>
+        <p>Tổng tiền: <span id="checkout-total">0</span></p>
+        <form>
+          <label for="name">Họ tên:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="address">Địa chỉ giao hàng:</label>
+          <input type="text" id="address" name="address" required />
+          <label for="payment-method">Phương thức thanh toán:</label>
+          <select id="payment-method">
+            <option value="cod">Thanh toán khi nhận hàng</option>
+            <option value="bank">Chuyển khoản ngân hàng</option>
+          </select>
+          <button type="submit" class="main-btn">Hoàn tất thanh toán</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2024 cuahangdochoi. All Rights Reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>spkm</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">TV6 STORE</div>
+      <nav>
+        <ul>
+          <li><a href="#" id="phones-link">Đồ chơi trẻ em</a></li>
+          <li><a href="#" id="accessories-link">Sản phẩm khuyến mãi</a></li>
+          <li><a href="#" id="support-link">Hỗ trợ</a></li>
+          <li><a href="#" id="my-orders-link">Đơn hàng của tôi</a></li>
+        </ul>
+      </nav>
+      <div class="search-bar">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Tìm kiếm sản phẩm..."
+        />
+        <button id="search-button">Tìm kiếm</button>
+      </div>
+      <div id="no-results" class="no-results">Không tìm thấy sản phẩm nào.</div>
+
+      <div class="cart">
+        <a href="#">Giỏ hàng </a>
+      </div>
+      <div class="auth">
+        <a href="#" id="login-link">Đăng nhập</a> |
+        <a href="#" id="signup-link">Đăng ký</a>
+        <!-- Avatar ẩn khi chưa đăng nhập -->
+        <div id="user-avatar" style="display: none">
+          <img src="default-avatar.jpg" alt="Avatar" id="avatar-img" />
+          <a href="#" id="logout-link">Đăng xuất</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero-slideshow">
+      <div class="slideshow-container">
+        <!-- Slide 1 -->
+        <div class="slide fade">
+          <img src="./img/kdcl-1.jpg" alt="Khuyến mãi 1" />
+          <a href="#" class="slide-link">Tham gia sự kiện</a>
+        </div>
+        <div class="slide fade">
+          <img
+            src="./img/ban-giao-xe-oto-dien-tre-em-1.jpg"
+            alt="Khuyến mãi 2"
+          />
+          <a href="#" class="slide-link">Tham gia sự kiện</a>
+        </div>
+        <div class="slide fade">
+          <img src="./img/xe-oto-dien-tre-em.jpg" alt="Khuyến mãi 3" />
+          <a href="#" class="slide-link">Tham gia sự kiện</a>
+        </div>
+        <div class="slide fade">
+          <img src="/img/s23.jpg" alt="Khuyến mãi 4" />
+          <a href="#" class="slide-link">Tham gia sự kiện</a>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+    </section>
+    <script src="main.js"></script>
+  </body>
+</html>

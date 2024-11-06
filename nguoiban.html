@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="nguoiban.css">
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Thư viện vẽ biểu đồ -->
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Admin Dashboard</div>
+        <nav>
+            <ul>
+                <li><a href="#" class="nav-link" data-section="dashboard-overview">Trang chủ</a></li>
+                <li><a href="#" class="nav-link" data-section="my-products-section">Sản phẩm của tôi</a></li>
+                <li><a href="#" class="nav-link" data-section="recent-orders-section">Đơn hàng vừa đặt</a></li>
+                <li><a href="#" class="nav-link" data-section="revenue-section">Doanh thu</a></li>
+                <li><a href="#" class="nav-link" data-section="notifications-section">Thông báo</a></li>
+            </ul>
+        </nav>
+        <div class="logout">
+            <a href="#">Đăng xuất</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Overview sections -->
+        <section id="dashboard-overview" class="admin-section active">  
+            <h2>Trang chủ</h2>
+            <div class="dashboard-overview">
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-book"></i>Sản phẩm của tôi</h3>
+                    <div class="products-overview">
+                        <p>Các sản phẩm mới nhất của cửa hàng:</p>
+                        <ul>
+                            <li>Sản phẩm A - Giá: 10.000.000 VNĐ</li>
+                            <li>Sản phẩm B - Giá: 12.000.000 VNĐ</li>
+                            <li>Sản phẩm C - Giá: 15.000.000 VNĐ</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-shopping-cart"></i>Đơn hàng vừa đặt</h3>
+                    <div class="orders-overview">
+                        <p>Đơn hàng mới nhất:</p>
+                        <ul>
+                            <li>Đơn hàng 1 - Sản phẩm A - Giá: 10.000.000 VNĐ</li>
+                            <li>Đơn hàng 2 - Sản phẩm B - Giá: 12.000.000 VNĐ</li>
+                            <li>Đơn hàng 3 - Sản phẩm C - Giá: 15.000.000 VNĐ</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="dashboard-card">
+                    <h3>Doanh thu</h3>
+                    <div class="chart-container">
+                        <canvas id="revenue-chart"></canvas>
+                    </div>
+                </div>
+        
+                <div class="dashboard-card">
+                    <h3><i class="fas fa-bell"></i>Thông báo</h3>
+                    <div class="notifications-overview">
+                        <ul class="notification-list">
+                            <li>Đơn hàng #1 đã được giao thành công.</li>
+                            <li>Đơn hàng #2 đang chờ xử lý.</li>
+                            <li>Khách hàng A đã liên hệ hỗ trợ.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- My Products Section -->
+        <section id="my-products-section" class="admin-section">
+            <h2>Sản phẩm của tôi</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-info">
+                        <h3>Sản phẩm A</h3>
+                        <p>Giá: 10.000.000 VNĐ</p>
+                        <p>Trạng thái: Còn hàng</p>
+                    </div>
+                    <div class="product-actions">
+                        <button class="edit-btn">Cập nhật</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-info">
+                        <h3>Sản phẩm B</h3>
+                        <p>Giá: 12.000.000 VNĐ</p>
+                        <p>Trạng thái: Còn hàng</p>
+                    </div>
+                    <div class="product-actions">
+                        <button class="edit-btn">Cập nhật</button>
+                    </div>
+                </div>
+                
+                <!-- Add New Product Card -->
+                <div class="product-card add-new">
+                    <div class="add-new-icon">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <p>Thêm sản phẩm mới</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Orders Section -->
+        <section id="recent-orders-section" class="admin-section">
+            <h2>Đơn hàng vừa đặt</h2>
+            <table class="order-table">
+                <thead>
+                    <tr>
+                        <th>Tên sản phẩm</th>
+                        <th>Số lượng</th>
+                        <th>Giá</th>
+                        <th>Tình trạng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sản phẩm A</td>
+                        <td>1</td>
+                        <td>10.000.000 VNĐ</td>
+                        <td>Đã giao</td>
+                    </tr>
+                    <tr>
+                        <td>Sản phẩm B</td>
+                        <td>2</td>
+                        <td>24.000.000 VNĐ</td>
+                        <td>Chưa giao</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Revenue Section -->
+        <section id="revenue-section" class="admin-section">
+            <h2>Doanh thu</h2>
+            <p>Tổng doanh thu tháng này: <strong>100.000.000 VNĐ</strong></p>
+            <div class="chart-container">
+                <canvas id="revenue-chart-full"></canvas>
+                <canvas id="revenue-chart-spiral"></canvas>
+                <canvas id="revenue-chart-full"></canvas>
+            </div>
+        </section>
+
+        <!-- Notifications Section -->
+        <section id="notifications-section" class="admin-section">
+            <h2>Thông báo</h2>
+            <ul class="notification-list">
+                <li>Đơn hàng #1 đã được giao thành công.</li>
+                <li>Đơn hàng #2 đang chờ xử lý.</li>
+                <li>Khách hàng A đã liên hệ hỗ trợ.</li>
+                <li>Cập nhật sản phẩm mới đã hoàn tất.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Admin Dashboard. All Rights Reserved.</p>
+    </footer>
+
+    <script src="nguoiban.js"></script>
+</body>
+</html>
