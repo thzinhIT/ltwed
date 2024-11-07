@@ -3,8 +3,20 @@ const navLinks = document.querySelectorAll(".nav-link");
 const sections = document.querySelectorAll(".admin-section");
 
 // Ẩn tất cả các section ban đầu
-sections.forEach((section) => (section.style.display = "none"));
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = document.querySelectorAll("section"); // Lấy tất cả các section
 
+  // Ẩn tất cả các section ban đầu
+  sections.forEach((section) => {
+    section.style.display = "none";
+  });
+
+  // Hiển thị section "trang chủ" khi trang admin được tải
+  const homeSection = document.getElementById("dashboard-overview");
+  if (homeSection) {
+    homeSection.style.display = "block";
+  }
+});
 // Bắt sự kiện click để chuyển đổi giữa các section
 navLinks.forEach((link) => {
   link.addEventListener("click", function (event) {
@@ -156,5 +168,3 @@ document
       .getElementById("revenue-section")
       .scrollIntoView({ behavior: "smooth", block: "start" });
   });
-
-// xử lý chỗ sản phẩm của tôi .
